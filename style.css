@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.heading{
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(18, 0, 39);
+  padding:4vh;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  color: white;
+}
+
+body{
+  background: #ecf0f3;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+}
+
+.mainForm {
+  position: relative ;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #e6e8eb;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px #fdfdfd;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 100px; 
+
+}
+
+.inputs{
+  caret-color: rgb(80, 96, 177);
+  text-align: left;
+}
+
+input[type="text"]
+{
+  font-size:16px;
+  margin:5px;
+}
+
+label, input, button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.submit_button {
+  padding: 7px;
+  background-color: rgb(16, 24, 63);
+  border-width: 0px;
+  border-radius: 15px;
+  font-size: 18px;
+  color: white;
+  width: 50%;
+  position:relative;
+  left: 25%;
+}
+
+.submit_button:hover {
+  padding: 7px;
+  background-color: rgb(37, 47, 99);
+  box-shadow: 4px 4px 4px rgb(199, 208, 255);
+  border-radius: 15px;
+  font-size: 18px;
+  color: white;
+  width: 50%;
+  position:relative;
+  left: 25%;
+}
+
+#searchtexts1, #searchtexts2, #searchtexts3, #category {
+  margin: 6px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+  padding: 2px;
+}
