@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="baseStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <title>Machine Learning Stater Guide</title>
+</head>
+<body>
+
+    <div class="heading">
+        <div class="title">
+        <h1 class="header">Ultimate Automator</h1>
+    </div>
+        <div class="gotoapp">
+            <a href="index.html" target="_blank">
+        <button class="btn_launch">Launch App</button>
+    </a>
+    </div>
+    </div>
+
+    <div class="mainContainer">
+        <div class="left">
+
+            <div class="tableofcontent">
+                <div class="table_header">Table of Content</div>
+                
+                <ul>
+                    <li class="list">
+                        <a href="#neuralnetworks">Neural Networks</a>
+                    </li>
+                    <li class="list">
+                        <a href="#cnn">
+                        What is CNN?
+                    </a>
+                    </li>
+                    <li class="list">
+                        <a href="#understanding">
+                        Understanding CNN
+                    </a>
+                    </li>
+                    <li class="list">
+                        <a href="#forward">
+                        Forward propagation
+                    </a> 
+                    </li>
+                    <li class="list">
+                        <a href="#backpropagation">
+                        Backpropagation
+                    </a>
+                    </li>
+                    <li class="list">
+                        <a href="#tensor">
+                        TensorFlow
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+    
+    <div class="mainContent"></div>
+        <div class="NeuralNetworks" id="neuralnetworks">
+        <h1 class="Heading1">Neural Networks</h1>
+        <p class="NN1">
+            Neural networks are a subset of machine learning and are at the heart of deep learning algorithms. Their name and structure are inspired by the human brain, mimicking the way that biological neurons signal to one another.
+        </p>
+        <p class="NN2">
+            Neural networks are comprised of a node layers, containing an input layer, one or more hidden layers, and an output layer. Each node, or artificial neuron, connects to another and has an associated weight and threshold. If the output of any individual node is above the specified threshold value, that node is activated, sending data to the next layer of the network. Otherwise, no data is passed along to the next layer of the network.
+        </p>
+        <p class="NN3">
+            Neural network is a technique for building a computer program that learns from data. It is based very loosely on how we think the human brain works. First, a collection of software “neurons” are created and connected together, allowing them to send messages to each other. Next, the network is asked to solve a problem, which it attempts to do over and over, each time strengthening the connections that lead to success and diminishing those that lead to failure.
+        </p>
+        </div>
+        <div class="architecture">
+        <h2 class="Heading2">
+            Architecture of Artificial Neural Network
+        </h2>
+
+        <p class="ANN1">
+            Artificial Neural Network primarily consists of three layers:
+        </p>
+
+        <img class="ANNImage" src="NeuralNetwork.png">
+
+        <p class="ANN2">
+            Input Layer: <br>
+        As the name suggests, it accepts inputs in several different formats provided by the programmer.<br><br>
+        Hidden Layer:<br>
+        The hidden layer presents in-between input and output layers. It performs all the calculations to find hidden features and patterns.<br><br>
+        Output Layer:<br>
+        The input goes through a series of transformations using the hidden layer, which finally results in output that is conveyed using this layer.<br><br>
+
+        </p>
+        </div>
+        <h1 class="Heading1" id="cnn">What is CNN?</h1>
+        <p>
+            CNN or the convolutional neural network (CNN) is a class of deep learning neural networks. In short think of CNN as a machine learning algorithm that can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image, and be able to differentiate one from the other.
+        </p>
+
+        <h2 class="Heading2">What does CNN consist of?</h2>
+        <p>
+            <ol>
+                <li>The input layer which is a grayscale image</li>
+                <li>The Output layer which is a binary or multi-class labels</li>
+                <li>Hidden layers consisting of convolution layers, ReLU (rectified linear unit) layers, the pooling layers, and a fully connected Neural Network</li>
+
+            </ol>
+        </p>
+
+        <h1 class="Heading1" id="understanding">Understanding CNN</h1>
+        <p>Let's consider that we have access to multiple images of different vehicles, each labeled into a truck, car, van, bicycle, etc. Now the idea is to take these pre-label/classified images and develop a machine learning algorithm that is capable of accepting a new vehicle image and classify it into its correct category or label. Now before we start building a neural network we need to understand that most of the images are converted into a grayscale form before they are processed.
+
+        </p>
+
+        <h2 class="Heading2">Image Processing</h2>
+        <p>Image processing is the process of segmenting images into different categories based on their features. A feature could be the edges in an image, the pixel intensity, the change in pixel values, and many more.</p>
+
+        <p>The biggest challenge when working with images is the uncertainty of these features. To the human eye, it looks all the same, however, when converted to data you may not find a specific pattern across these images easily.</p>
+        
+        <p>An image consists of the smallest indivisible segments called pixels and every pixel has a strength often known as the pixel intensity. Whenever we study a digital image, it usually comes with three color channels, i.e. the Red-Green-Blue channels, popularly known as the “RGB” values. Why RGB? Because it has been seen that a combination of these three can produce all possible color pallets. Whenever we work with a color image, the image is made up of multiple pixels with every pixel consisting of three different values for the RGB channels.</p>
+        </p>
+
+        <h2 class="Heading2">What is grayscale and why it is used?</h2>
+
+        <img src="Grayscale.png">
+    
+        <p>
+            We discussed earlier that any color image has three channels, i.e. red, green, and blue as shown in Figure 3. There are several such color spaces like the grayscale, CMYK, HSV in which an image can exist.
+        </p>
+
+        <p>
+            The challenge with images having multiple color channels is that we have huge volumes of data to work with which makes the process computationally intensive. In other worlds think of it like a complicated process where the Neural Network or any machine learning algorithm has to work with three different data (R-G-B values in this case) to extract features of the images and classify them into their appropriate categories.
+        </p>
+
+        <p>
+            The role of CNN is to reduce the images into a form that is easier to process, without losing features critical towards a good prediction. This is important when we need to make the algorithm scalable to massive datasets.
+        </p>
+
+        <h1 class="Heading1" id="forward">
+            Forward propagation
+        </h1>
+        <p>
+            Forward propagation (or forward pass) refers to the calculation and storage of intermediate variables (including outputs) for a neural network in order from the input layer to the output layer. As the name suggests, the input data is fed in the forward direction through the network. Each hidden layer accepts the input data, processes it as per the activation function and passes to the successive layer.
+        </p>
+        <h2 class="Heading2">Why feed-forward network?</h2>
+        <p>
+            In order to generate some output, the input data should be fed in the forward direction only. The data should not flow in reverse direction during output generation otherwise it would form a cycle and the output could never be generated. Such network configurations are known as feed-forward network. The feed-forward network helps in forward propagation.
+        </p>
+        <h2 class="Heading2">Computational graph of forward propagation</h2>
+        <img src="ForwardPropagation.png">
+        <p>
+            Plotting computational graphs helps us visualize the dependencies of operators and variables within the calculation. Figure below contains the graph associated with the simple network described above, where squares denote variables and circles denote operators. The lower-left corner signifies the input and the upper-right corner is the output. Notice that the directions of the arrows (which illustrate data flow) are primarily rightward and upward.
+        </p>
+
+        <h1 class="Heading1" id="backpropagation">Backpropagation</h1>
+        <p>Backpropagation refers to the method of calculating the gradient of neural network parameters. In short, the method traverses the network in reverse order, from the output to the input layer, according to the chain rule from calculus. The algorithm stores any intermediate variables (partial derivatives) required while calculating the gradient with respect to some parameters.</p>
+
+        <h2 class="Heading2">Why is backpropagation used?</h2>
+        <p>
+            In fitting a neural network, backpropagation computes the gradient of the loss function with respect to the weights of the network for a single input-output example, and does so efficiently, unlike a naive direct computation of the gradient with respect to each weight individually. This efficiency makes it possible to use gradient methods for training multilayer networks, updating weights to minimize loss; gradient descent, or variants such as stochastic gradient descent, are commonly used. The backpropagation algorithm works by computing the gradient of the loss function with respect to each weight by the chain rule, computing the gradient one layer at a time, iterating backward from the last layer to avoid redundant calculations of intermediate terms in the chain rule; this is an example of dynamic propagation.
+        </p>
+        <h1 class="Heading1" id="tensor">TensorFlow</h1>
+        <p>
+            Tensorflow is a library/platform created by and open-sourced by Google. It is the most used library for deep learning applications. Now, creating a neural network might not be the primary function of the TensorFlow library but it is used quite frequently for this purpose. It was designed to work on multiple CPUs or GPUs, as well as mobile operating systems in some circumstances, and it includes wrappers in Python, C++, and Java.
+        </p>
+        <p>TensorFlow provides stable Python and C++ APIs, as well as non-guaranteed backward compatible API for other languages.</p>
+       
+    </div>
+</div>
+<div class="footer">
+
+    <span>&copy; Ultimate Automator</span>
+</div>
+</body>
+</html>

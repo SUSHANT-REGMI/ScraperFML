@@ -107,3 +107,15 @@ label, input, button {
 .btn:hover {
   background-color: RoyalBlue;
 }
+
+.footer{
+  margin-top:2rem ;
+  width: 100vw;
+  background-color: black;
+  flex-direction: row;
+  height: 15vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
