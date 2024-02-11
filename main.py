@@ -171,6 +171,37 @@ def resize_batch_images():
       # print("here 4")
       count1 += 1
 
+def data_augmentation():
+  import numpy as np
+  from skimage import io
+  datagen = ImageDataGenerator(        
+        rotation_range = 40,
+        shear_range = 0.2,
+        zoom_range = 0.2,
+        horizontal_flip = True,
+        brightness_range = (0.5, 1.5))
+
+  image_directory = resized_image_folder_address
+  SIZE = 224
+  dataset = []
+  my_images = os.listdir(image_directory)
+  os.mkdir('C:/Users/susha/OneDrive/Desktop/AutomationProjectMock/Augmented/'+last_row[0]+' /Images')
+  save_address = 'C:/Users/susha/OneDrive/Desktop/AutomationProjectMock/Augmented/'+last_row[0]+' /Images'
+  for i, image_name in enumerate(my_images):    
+      if (image_name.split('.')[1] == 'png'):        
+          image = io.imread(image_directory + image_name)        
+          image = Image.fromarray(image, 'RGB')        
+          image = image.resize((SIZE,SIZE)) 
+          dataset.append(np.array(image))
+  x = np.array(dataset)
+  i = 0
+  for batch in datagen.flow(x, batch_size=16,
+                            save_to_dir= save_address,
+                            save_prefix='',
+                            save_format='jpg'):    
+      i += 1    
+      if i > 50:        
+          break
 
 
 if __name__ == "__main__":
